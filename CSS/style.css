@@ -1,6 +1,6 @@
 body{
 
-    background-color: rgb(155, 197, 214);
+    background: linear-gradient(#8ebfd1,rgb(226, 226, 226));
 }
 
 /* .pointer {
@@ -18,11 +18,21 @@ nav {
     justify-content: space-between;
 }
 
-.mgauche , .mdroite {
-    width: 200px;
-    height: 200px;
+.mgauche , .mdroite  {
+    width: 150px;
+    height: 150px;
 
 }
+
+.imgcassebrique {
+    width:400px;
+    height: 200px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px;
+}
+
 
 h1 {
 color:black;
@@ -33,7 +43,7 @@ text-align: center;
 }
 
 
-.doigt {
+.imgdoigt {
     display:block;
     width:100px;
     height: 100px;
@@ -46,10 +56,51 @@ text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 100px;
     font-size: 30px;
+    line-height: 35px;
+    padding: 5px 10px;
+    color:black;
+    text-shadow: 1px 1px 1px #000000;
+    border-radius: 18px;
+    background-color:goldenrod;
+    background-image: linear-gradient(to top left,
+                          rgba(255, 0, 0, 0.87),
+                           rgba(160, 45, 45, 0.781),
+                          rgb(255, 208, 0));
+    box-shadow: inset 2px 2px 2px #ffffffd7,
+    inset -2px -2px 3px rgba(0, 0, 0, 0.637);
 }
 
-div {
-    margin-left: 50px;
-    margin-top: 100px;
+.go:hover{
+    background-color: rgb(255, 0, 0, 1);
+    cursor: pointer;
 }
+
+
+.go:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.89),
+                inset 2px 2px 3px rgba(0, 0, 0, 0.781);
+}
+
+.regles {
+    margin-left: 30px;
+    margin-bottom: 50px;
+}
+
+.commandes{
+    margin-left: 30px;
+}
+
+.imgfleches {
+
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.commandes > .commandeflex {
+    display: flex;
+    align-self:center;
+}
+
