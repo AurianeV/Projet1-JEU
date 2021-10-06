@@ -52,7 +52,7 @@ text-align: center;
     margin-top: 50px;
 }
 
-.go {
+.startbutton {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -72,13 +72,16 @@ text-align: center;
     inset -2px -2px 3px rgba(0, 0, 0, 0.637);
 }
 
-.go:hover{
-    background-color: rgb(255, 0, 0, 1);
+.startbutton:hover{
+    background-image:linear-gradient(to top left,
+                          rgba(199, 0, 0, 0.952),
+                           rgba(161, 0, 0, 0.918),
+                          rgba(255, 0, 0, 0.767));
     cursor: pointer;
 }
 
 
-.go:active {
+.startbutton:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.89),
                 inset 2px 2px 3px rgba(0, 0, 0, 0.781);
 }
@@ -104,3 +107,6 @@ text-align: center;
     align-self:center;
 }
 
+#cassebrique {
+    border: 1px solid red;
+}
