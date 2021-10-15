@@ -46,11 +46,12 @@ class Brique {
 }
 
 let briques = [
-  [new Brique(), 1, 1, 1, 1, 1, 1, 0], // 1ere 
-  [1, 1, 1, 1, 1, 1, 1, 0],
-  [1, 1, 1, 1, 1, 1, 1, 0],
-  [1, 1, 1, 1, 1, 1, 1, 0]
-]
+  [new Brique(110,50), new Brique(250,50), new Brique(390,50), new Brique(530,50), new Brique(670,50), new Brique(810,50), new Brique(950,50), new Brique(1090,50)], // 1ere ligne
+  [new Brique(150,100), new Brique(290,100), new Brique(430,100), new Brique(570,100), new Brique(710,100), new Brique(850,100), new Brique(990,100)], // 2ème ligne
+  [new Brique(110,150), new Brique(250,150), new Brique(390,150), new Brique(530,150), new Brique(670,150), new Brique(810,150), new Brique(950,150), new Brique(1090,150)], // 3ème ligne 
+  [new Brique(150,200), new Brique(290,200), new Brique(430,200), new Brique(570,200), new Brique(710,200), new Brique(850,200), new Brique(990,200)], // 4ème ligne
+
+] 
 
 
 // Faire que la raquette ne sorte pas du CANVAS
@@ -72,15 +73,10 @@ class Projectile {
   }
 
   moveUp() {
-    this.y += 1;
+    this.y -= 5;
   }
 }
 
-
-
-
-
-// KEY_SPACE = 32;
 
 function draw() {
 
@@ -92,31 +88,34 @@ function draw() {
 
 
   for(let i = 0; i< briques[0].length; i++) {
-    briques[0][i].draw()
+    briques[0][i].draw();
   }
 
   for(let i = 0; i< briques[1].length; i++) {
-    ctx.beginPath();
+    briques[1][i].draw();
+    /*ctx.beginPath();
     ctx.rect(180 + i*150, 100, width, heigth);
     ctx.fillStyle = "#8B008B";
     ctx.fill();
-    ctx.closePath();
+    ctx.closePath(); */
   }
 
   for(let i = 0; i< briques[2].length; i++) {
-    ctx.beginPath();
+    briques[2][i].draw();
+    /*ctx.beginPath();
     ctx.rect(110 + i*150, 150, width, heigth);
     ctx.fillStyle = "#A10684";
     ctx.fill();
-    ctx.closePath();
+    ctx.closePath(); */
   }
 
   for(let i = 0; i< briques[3].length; i++) {
-    ctx.beginPath();
+    briques[3][i].draw();
+    /*ctx.beginPath();
     ctx.rect(180 + i*150, 200, width, heigth);
     ctx.fillStyle = "#BD33A4";
     ctx.fill();
-    ctx.closePath();
+    ctx.closePath();*/
   }
 
   // Dessin de la plateforme 
@@ -128,13 +127,13 @@ function draw() {
 
   // Dessiner la balle
 
-  ctx.beginPath();
+  /*ctx.beginPath();
   ctx.arc(Ballx, Bally, diametreBall, 0, Math.PI*2);
   ctx.fillStyle = "#4120b2";
   ctx.fill();
   ctx.closePath();
   //Ballx += dx;
-  //Bally += dy;
+  //Bally += dy; */
 
   // Tracer les projectiles
 
@@ -185,7 +184,7 @@ function keyDownTouch(e) {
   }
   if(e.key === " ") { 
     console.log("coucou");
-    const p1 =  new Projectile(250, 300, 50, 50) // {x: 250, y: 300, width: 50, height:50}
+    const p1 =  new Projectile(plateformX + plateformWidth/2, plateformY - 20, 20, 20) // {x: 250, y: 300, width: 50, height:50}
     p1.draw()
     console.log(p1);
     projectiles.push(p1);
@@ -203,47 +202,5 @@ function keyUpTouch(e) {
       leftPressed = false;
   }
 }
-
-
-// Dessiner les briques à l'aide d'un tableau
-
-/* const brickLine = 4; // Nombre de lignes
-const brickColumn = 8; // Nombre de colonnes
-const brickWidth = 110;
-const brickHeight = 33;
-const brickPadding = 15;
-const brickOffsetTop = 70;
-const brickOffsetLeft = 200;
-
-// Création du tableau
-
-const bricks = [];
-  for(let c=0; c<brickColumn; c++) {
-    bricks[c] = [];
-  for(let l=0; l<brickLine; l++) {
-      bricks[c][l] = { x: 0, y: 0 };
-    }
-}
-
-function drawBricks() {
-  for(let c=0; c<brickColumn; c++) {
-      for(let l=0; l<brickLine; l++) {
-          const brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-          const brickY = (l*(brickHeight+brickPadding))+brickOffsetTop;
-          bricks[c][l].x = brickX;
-          bricks[c][l].y = brickY;
-          ctx.beginPath();
-          ctx.rect(brickX, brickY, brickWidth, brickHeight);
-          ctx.fillStyle = "purple";
-          ctx.fill();
-          ctx.closePath();
-      }
-  }
-}
-*/
-
-
-
-
 
 
