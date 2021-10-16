@@ -3,15 +3,6 @@ body{
     background: linear-gradient(#8ebfd1,rgb(226, 226, 226));
 }
 
-/* .pointer {
-
-    display:block;
-    width:200px;
-    height: 200px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 50px;
-} */
 
 nav {
     display: flex;

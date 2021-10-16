@@ -86,10 +86,6 @@ let briques = [
 
 ] 
 
-
-// Faire que la raquette ne sorte pas du CANVAS
-
-
 // quand j'appuie sur touche espace, un projectile apparaît
 // tableau de projectile, chaque projectile est un objet avec x, y
 
@@ -156,9 +152,9 @@ function draw() {
 
   // pour chq projectile
   for (let i=0;i<projectiles.length;i++){
-    // pour chq ligne
+    // pour chaque ligne
     for (let k = 0; k < briques.length; k++) {
-      // pour chq brique
+      // pour chaque brique de chaque ligne
       for(let j=0; j<briques[k].length;j++) {
         if (projectiles[i].crashWith(briques[k][j])) {
           briques[k][j].on = false;
@@ -168,7 +164,7 @@ function draw() {
     
   }
 
-  // qd toutes les briques ont la propriete on false
+  // qd toutes les briques ont la propriete on --> false
 
   let sum = 0
   for (let k = 0; k < briques.length; k++) {
